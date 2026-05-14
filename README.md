@@ -2,7 +2,10 @@ Background
 
 Overview
 This dataset contains ultralow-dose cryoEM montage tile images of the bacteria Pantoea sp. YR343. Segmentation models from YOLOv11, YOLO26, U-Net, Detectron2 and SAM3 have been fine-tuned to predict bacterial inner membranes and outer membranes. This bacterial membrane dataset is a benchmark dataset to challenge current AI workflows in rapid, seamless montage stitching and stitched segmentation in extremely noisy ultralow-dose cryoEM images. Bacterial flagella low-dose cryoEM images have also been added as a dataset challenge to segmenting high-boundary thin objects in noisy low-dose cryoEM images.
+
 Dataset and Model Repository
+
+All datasets are publicly available with a title-sensitive DOI link omitted to maintain anonymity. 
 
 Datasets and raw cryoEM images can be found on https://github.com/Lynnicia/TileBac-ultralow-dose-montage-tiles as well as on Hugging Face at: https://huggingface.co/datasets/LynnMass/tilebac-ULDM-benchmark-dataset, https://huggingface.co/datasets/LynnMass/tilebac-ULDM-tiles, https://huggingface.co/datasets/LynnMass/tilebac-stitched-montage and https://huggingface.co/datasets/LynnMass/tilebac-flag-dataset. 
 
