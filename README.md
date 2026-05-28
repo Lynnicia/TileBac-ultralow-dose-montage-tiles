@@ -5,7 +5,7 @@ This dataset contains ultralow-dose cryoEM montage tile images of the bacteria P
 
 Dataset and Model Repository
 
-All datasets are publicly available with a title-sensitive DOI link omitted to maintain anonymity. 
+All datasets are openly available on Constellation (DOI: 10.13139/ORNLNCCS/3025229). 
 
 Datasets and raw cryoEM images can be found on https://github.com/Lynnicia/TileBac-ultralow-dose-montage-tiles as well as on Hugging Face at: https://huggingface.co/datasets/LynnMass/tilebac-ULDM-benchmark-dataset, https://huggingface.co/datasets/LynnMass/tilebac-ULDM-tiles, https://huggingface.co/datasets/LynnMass/tilebac-stitched-montage and https://huggingface.co/datasets/LynnMass/tilebac-flag-dataset. 
 
