@@ -9,7 +9,7 @@ All datasets are openly available on Constellation (DOI: 10.13139/ORNLNCCS/30252
 
 Datasets are located on Hugging Face at: https://huggingface.co/datasets/LynnMass/tilebac-ULDM-benchmark-dataset. 
 
-Models (3 seed) can be found on Hugging Face at: https://huggingface.co/buckets/ReviewAnon/tilebac_benchmark_models_3seeds
+Models (3 seed) can be found on Hugging Face at: https://huggingface.co/buckets/LynnMass/tilebac_benchmark_models_3seeds 
 
 Reference
 
