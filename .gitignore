@@ -1,0 +1,11 @@
+# TileBac datasets and trained checkpoints
+data/
+checkpoints/
+
+# Generated evaluation files
+unified_evaluation/work/
+unified_evaluation/outputs/
+
+# Python
+__pycache__/
+*.pyc
