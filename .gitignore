@@ -1,0 +1,18 @@
+# TileBac datasets and trained checkpoints
+data/
+checkpoints/
+
+# Generated evaluation files
+unified_evaluation/work/
+unified_evaluation/outputs/
+
+# Local environments and external repositories
+tilebac_eval/
+repos/
+
+# Python
+__pycache__/
+*.pyc
+
+
+

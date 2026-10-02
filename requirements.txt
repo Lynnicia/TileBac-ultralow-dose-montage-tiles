@@ -1,0 +1,13 @@
+numpy<2
+pandas
+scipy
+scikit-learn
+scikit-image
+opencv-python-headless
+Pillow
+matplotlib
+pycocotools
+ultralytics
+huggingface_hub
+einops
+setuptools<81
