@@ -6,12 +6,19 @@ thin trace and, if so, how thin.
 """
 
 import json
-
 import numpy as np
 import pandas as pd
 from scipy import ndimage
 from skimage.morphology import skeletonize
 from pycocotools import mask as mask_utils
+
+import sys
+from pathlib import Path
+
+sys.path.insert(
+    0,
+    str(Path(__file__).resolve().parents[1])
+)
 
 from config import (
     OUTPUT_DIR,

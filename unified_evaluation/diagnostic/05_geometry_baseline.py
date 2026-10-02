@@ -15,13 +15,19 @@ Predictions are filtered at score >= 0.5.
 """
 
 import json
-
 import cv2
 import numpy as np
 import pandas as pd
-
 from pycocotools.coco import COCO
 from pycocotools import mask as mask_utils
+
+import sys
+from pathlib import Path
+
+sys.path.insert(
+    0,
+    str(Path(__file__).resolve().parents[1])
+)
 
 from config import (
     WORK_DIR,
@@ -158,7 +164,7 @@ for res in [
     gt = COCO(
         str(
             WORK_DIR
-            / f"gt_{res}_test.json"
+            / f"gt_{res}.json"
         )
     )
 

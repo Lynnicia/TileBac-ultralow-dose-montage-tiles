@@ -5,15 +5,24 @@ boundary IoU is taken as match. Boundary IoU is computed on outline bands of
 width BW; symmetric surface distance is the mean of the two directed mean
 nearest-neighbour distances between contour pixel sets.
 """
-
+import contextlib
+import io
 import json
-
+import json
 import cv2
 import numpy as np
 import pandas as pd
 from scipy import ndimage
 from pycocotools.coco import COCO
 from pycocotools import mask as mask_utils
+
+import sys
+from pathlib import Path
+
+sys.path.insert(
+    0,
+    str(Path(__file__).resolve().parents[1])
+)
 
 from config import (
     WORK_DIR,

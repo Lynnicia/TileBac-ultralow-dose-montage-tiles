@@ -14,16 +14,22 @@ import json
 import itertools
 import io
 import contextlib
-
 import numpy as np
 import pandas as pd
 import cv2
-
 from scipy import ndimage
 from skimage.morphology import skeletonize
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as mask_utils
+
+import sys
+from pathlib import Path
+
+sys.path.insert(
+    0,
+    str(Path(__file__).resolve().parents[1])
+)
 
 from config import (
     DATA_DIR,

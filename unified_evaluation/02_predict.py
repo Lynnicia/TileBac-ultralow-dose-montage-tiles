@@ -261,7 +261,8 @@ def run_yolo_valid(resolution):
         run_name = f"{architecture}_{resolution}"
 
         model.val(
-            data=str(WORK_DIR / f"yolo_{resolution}.yaml"),
+            #data=str(WORK_DIR / f"yolo_{resolution}.yaml"),
+            data=str(YOLO_DIR[resolution] / "data.yaml"),
             split="val",
             imgsz=int(resolution),
             verbose=False,
