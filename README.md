@@ -28,3 +28,85 @@ Please cite this Biorxiv paper in association with this dataset, the Bibtex for 
 	journal = {bioRxiv}
 }
 ```
+
+## Unified Evaluation Pipeline
+
+The `unified_evaluation/` directory consolidates the original model-specific evaluation scripts into a reproducible evaluation workflow for YOLOv11, YOLO26, U-Net, Detectron2, and SAM3 at 640 and 1024 resolution.
+
+### Download dataset and model checkpoints
+
+The released TileBac dataset and trained model checkpoints are not stored directly in this Git repository. Download them automatically with:
+
+```bash
+python download_assets.py
+```
+
+The script downloads the released assets into:
+
+```text
+data/uldm_bm/       # TileBac benchmark dataset
+checkpoints/        # trained model checkpoints
+```
+
+These directories are excluded from Git.
+
+### Environment setup
+
+The unified evaluation pipeline was tested with Python 3.12 on an NVIDIA A100 GPU with CUDA 12.8.
+
+Create and activate the environment:
+
+```bash
+python3.12 -m venv tilebac_eval
+source tilebac_eval/bin/activate
+python -m pip install --upgrade pip
+```
+
+Install PyTorch with CUDA 12.8 support:
+
+```bash
+pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu128
+```
+
+Install the standard dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install Detectron2:
+
+```bash
+pip install --no-build-isolation 'git+https://github.com/facebookresearch/detectron2.git'
+```
+
+Install SAM3:
+
+```bash
+pip install 'git+https://github.com/facebookresearch/sam3.git'
+pip install "setuptools<81"
+pip install einops
+```
+
+The U-Net evaluation uses the model definition from the original `Semantic-Segmentation-of-bacterial-cell-envelope-using-U-Nets` repository. Clone that repository into `repos/` before running U-Net inference.
+
+### Run the evaluation
+
+Prepare the test and validation ground truth:
+
+```bash
+python unified_evaluation/01_prepare_ground_truth.py --split test --resolution all
+python unified_evaluation/01_prepare_ground_truth.py --split valid --resolution all
+```
+
+Run model inference using `02_predict.py`, followed by the common COCO evaluation and diagnostic scripts in numerical order.
+
+```bash
+python unified_evaluation/02_predict.py --help
+python unified_evaluation/03_coc_evaluation.py --resolution all
+python unified_evaluation/04_pixel_f1.py
+```
+
+Additional analyses are provided in `unified_evaluation/diagnostic/`.
+
+`10_verify_claims.py` is retained as an optional historical/manuscript self-audit. Some checks depend on auxiliary intermediate files from the original analysis that are not included with the released benchmark assets, so this script is not required for the core evaluation workflow.
